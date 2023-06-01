@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  number    String
+  password  String
+}
+
+model car {
+  id               Int     @id @default(autoincrement())
+  modelname        String
+  nplaces          Int
+  inssurancenumber String  @unique @db.VarChar(50)
+  carlicencenumber String  @unique @db.VarChar(50)
+  carstatut        Boolean
+}
+
+model trip {
+  id         Int      @id @default(autoincrement())
+  driverid   Int
+  shared     Boolean
+  pickup     Json
+  finalpoint Json
+  triproad   Json
+  startat    DateTime @default(now())
+  status     Int
+  finished   Boolean
+}
+model ride {
+  id          Int       @id@default(autoincrement())
+  driverid    Int
+  clientid1   Int
+  clientid2   Int
+  shared      Boolean
+  startat     DateTime
+  secondat    DateTime
+  totalprice  Float
+}
+model driver {
+   id       Int    @id @default(autoincrement())
+   number    String
+   fullname  String
+   adresse          String
+   candrive         Boolean
+   licenceV         Boolean
+   accountstatut    Boolean
+   totalworkingtime Float
+   birthdata   String
+   cin        String
+   carmodel   String
+   nameonvrd  String
+   rate       Float
+   numbrate   Int
+   carconstractor  String
+   typeofcar   String
+   accountcreationdate DateTime @default(now())
+   password String
+ }

@@ -1,0 +1,8 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/9d0d6d19-671b-4281-9af2-9e286fc6a014/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/poolzwebapp",
+    "appService.deploySubpath": "backbackun",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ]
+}

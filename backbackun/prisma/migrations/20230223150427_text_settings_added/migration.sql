@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "driver" ALTER COLUMN "email" DROP NOT NULL,
+ALTER COLUMN "email" SET DATA TYPE TEXT;
