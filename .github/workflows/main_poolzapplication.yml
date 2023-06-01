@@ -45,10 +45,9 @@ jobs:
 
     steps:
     
-      - name: Azure Login
-        uses: azure/login@v1
-        with:
-         creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Sample Azure action
+        with: # Set Azure credentials secret as an input
+         credentials: ${{ secrets.AZURE_CREDENTIALS }}
 
   
       - name: Download artifact from build job
